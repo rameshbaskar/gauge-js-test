@@ -2,3 +2,5 @@ logs/
 .vscode/
 reports/
 node_modules/
+
+.gauge/
