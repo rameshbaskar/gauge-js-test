@@ -1,5 +1,6 @@
 # Sample Feature
 
-## Verify view of Google Home Page
+## Verify basic Google search
 * Goto Home Page
-* Verify if page contains "Google"
+* Search for "Selenium"
+* Verify if page contains "www.selenium.dev"
