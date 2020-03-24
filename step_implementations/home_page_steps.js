@@ -1,4 +1,4 @@
-const { write, click, goto, into, highlight, text } = require('taiko');
+const { write, goto, into } = require('taiko');
 
 // page objects
 const txtSearchField = "$[name='q']";
@@ -9,6 +9,5 @@ step("Goto Home Page", async () => {
 
 step("Search for <textToSearch>", async (textToSearch) => {
     await write(textToSearch, into(txtSearchField));
-    await highlight(text(textToSearch));
-    await click(text(textToSearch));
+    await press("Enter");
 });
