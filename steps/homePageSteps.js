@@ -1,11 +1,14 @@
-const homePage = require('../lib/pages/homePage.js');
-const driver = require('../lib/pages/driver.js');
+const HomePage = require('../lib/pages/homePage');
+const Browser = require('../lib/core/browser');
+
+const browser = new Browser();
+const homePage = new HomePage();
 
 step("Goto Home Page", async () => {
-    await driver.visitPage("https://www.google.com/");
-    await driver.takeASnap();
+    await homePage.visit("https://www.google.com/");
+    await browser.takeASnap();
 });
 
 step("Search for <content>", async (content) => {
-    await homePage.searchFor(content);
+    await homePage.search(content);
 });

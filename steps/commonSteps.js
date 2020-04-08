@@ -1,6 +1,8 @@
-const driver = require('../lib/pages/driver.js');
+const Browser = require('../lib/core/browser');
 const assert = require('assert');
 const fs = require('fs');
+
+const browser = new Browser();
 
 beforeSuite(async () => {
     console.log('Preparing some basic folders...');
@@ -10,18 +12,18 @@ beforeSuite(async () => {
     }
     
     console.log(" -------- Begin Execution --------- ");
-    await driver.launchBrowser();
+    await browser.launch();
 });
 
 afterSuite(async () => {
     console.log(" -------- Done Executing --------- ");
-    await driver.quit();
+    await browser.quit();
 });
 
 step("Verify if page contains <content>", async (content) => {
-    assert.ok(await driver.hasContent(content));
+    assert.ok(await browser.hasContent(content));
 });
 
 step("Reload page", async () => {
-    await driver.refresh();
+    await browser.refresh();
 });
