@@ -1,8 +1,5 @@
-const HomePage = require('../lib/pages/homePage');
-const Browser = require('../lib/core/browser');
-
-const browser = new Browser();
-const homePage = new HomePage();
+const homePage = require('../lib/pages/homePage');
+const browser = require('../lib/core/browser');
 
 step("Goto Home Page", async () => {
     await homePage.visit("https://www.google.com/");

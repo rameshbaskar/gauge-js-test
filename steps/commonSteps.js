@@ -1,12 +1,10 @@
-const Browser = require('../lib/core/browser');
+const browser = require('../lib/core/browser');
 const assert = require('assert');
 const fs = require('fs');
 
-const browser = new Browser();
-
 beforeSuite(async () => {
     console.log('Preparing some basic folders...');
-    var screenshotsDir = 'logs/screenshots';
+    let screenshotsDir = 'logs/screenshots';
     if(!fs.existsSync(screenshotsDir)) {
         fs.mkdirSync(screenshotsDir);
     }
