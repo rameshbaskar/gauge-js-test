@@ -1,4 +1,5 @@
-const browser = require('../lib/core/browser');
+const Browser = require('../lib/core/browser');
+const taiko = require('taiko');
 const assert = require('assert');
 const fs = require('fs');
 
@@ -10,12 +11,12 @@ beforeSuite(async () => {
     }
     
     console.log(" -------- Begin Execution --------- ");
-    await browser.launch();
+    await taiko.openBrowser();
 });
 
 afterSuite(async () => {
     console.log(" -------- Done Executing --------- ");
-    await browser.quit();
+    await taiko.closeBrowser();
 });
 
 step("Verify if page contains <content>", async (content) => {
